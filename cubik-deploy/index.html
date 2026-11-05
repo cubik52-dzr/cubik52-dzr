@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#252525">
+  <meta name="description" content="Кузовной автосервис «Кубик» в Дзержинске. Покраска от 4 500 ₽, полировка, кузовной ремонт и стапель. Красноармейская, 19А. Оценка по фото в ВК.">
+  <title>Кубик — кузовной ремонт и покраска в Дзержинске</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="estimate.css">
+  <script src="interactions.js" defer></script>
+  <script src="estimate.js" defer></script>
+  <link rel="stylesheet" href="results.css">
+  <link rel="stylesheet" href="workshop.css">
+  <script src="results.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержимому</a>
+  <div class="page">
+    <header class="header">
+      <a class="brand press" href="./" aria-label="Кубик — главная">кубик<span aria-hidden="true">/</span></a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a class="press" href="#services">Услуги</a>
+        <a class="press" href="https://vk.ru/im?sel=-102130451" target="_blank" rel="noopener noreferrer">Оценка по фото</a>
+        <a class="press" href="#contacts">Контакты</a>
+      </nav>
+      <a class="call press" href="tel:+79200412552">Позвонить <span aria-hidden="true">↗</span></a>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="service-grid" id="services">
+          <h1 id="hero-title">Кузовной ремонт.<br>Покраска.</h1>
+          <a class="service-card paint press" id="paint" href="https://vk.ru/im?sel=-102130451" target="_blank" rel="noopener noreferrer" aria-label="Покраска от 4 500 рублей — оценить по фото в ВК">
+            <img src="assets/hero-paint.png" width="1254" height="1254" alt="" fetchpriority="high">
+            <span class="card-caption"><span class="badge">Покраска</span><span class="card-detail">от 4 500 ₽</span></span>
+          </a>
+          <a class="service-card polish press" id="polish" href="https://vk.ru/im?sel=-102130451" target="_blank" rel="noopener noreferrer" aria-label="Полировка — узнать стоимость в ВК">
+            <img src="assets/hero-polish.png" width="1254" height="1254" alt="">
+            <span class="card-caption"><span class="badge">Полировка</span><span class="card-detail">По осмотру</span></span>
+          </a>
+          <a class="service-card bodywork press" id="bodywork" href="https://vk.ru/im?sel=-102130451" target="_blank" rel="noopener noreferrer" aria-label="Кузовной ремонт и стапель — оценить по фото в ВК">
+            <img src="assets/hero-bodywork.png" width="1448" height="1086" alt="">
+            <span class="card-caption"><span class="badge">Кузовной ремонт и стапель</span><span class="card-detail">По осмотру</span></span>
+          </a>
+        </div>
+        <div class="hero-bottom">
+          <h2>Кузов. Цвет. <br>Детали.</h2>
+          <p>От царапины на бампере до восстановления геометрии кузова. Пришлите фото повреждений в ВК — предварительно оценим ремонт. Точную стоимость определим после осмотра.</p>
+          <a class="button press" href="https://vk.ru/im?sel=-102130451" target="_blank" rel="noopener noreferrer">Оценить по фото</a>
+        </div>
+      </section>
+      <section class="contacts" id="calculator" aria-labelledby="contacts-title">
+        <div class="contacts-heading">
+          <h2 id="contacts-title">Кубик. Дзержинск.</h2>
+          <div class="contact-copy">
+            <a class="address press" href="https://yandex.ru/maps/?rtext=~%D0%94%D0%B7%D0%B5%D1%80%D0%B6%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B0%D1%80%D0%BC%D0%B5%D0%B9%D1%81%D0%BA%D0%B0%D1%8F%2C%2019%D0%90&amp;rtt=auto" target="_blank" rel="noopener noreferrer">ул. Красноармейская, 19А <span aria-hidden="true">↗</span></a>
+            <a class="press" href="tel:+79200412552">+7 (920) 041-25-52</a>
+          </div>
+        </div>
+        <div class="service-links estimate-tabs" role="tablist" aria-label="Выберите услугу">
+          <button class="press" type="button" role="tab" id="tab-paint" aria-controls="price-paint" aria-selected="true" data-service="paint">Покраска</button>
+          <button class="press" type="button" role="tab" id="tab-polish" aria-controls="price-polish" aria-selected="false" tabindex="-1" data-service="polish">Полировка</button>
+          <button class="press" type="button" role="tab" id="tab-bodywork" aria-controls="price-bodywork" aria-selected="false" tabindex="-1" data-service="bodywork">Кузовной ремонт</button>
+          <button class="press" type="button" role="tab" id="tab-frame" aria-controls="price-frame" aria-selected="false" tabindex="-1" data-service="frame">Стапель</button>
+        </div>
+        <div class="estimate-grid">
+          <div class="estimate-card price-card">
+            <div id="price-panels"></div>
+            <div class="price-footnote">
+              <span class="badge">Подбор эмали включен</span>
+              <p>Цены предварительные. Точная стоимость — после осмотра.</p>
+            </div>
+          </div>
+          <section class="estimate-card quote-card" aria-labelledby="quote-title">
+            <h3 id="quote-title">Оценка по фото</h3>
+            <div class="estimate-summary" aria-live="polite" aria-atomic="true">
+              <p class="estimate-total"><span>Ориентировочная стоимость</span><strong id="estimate-total">—</strong></p>
+              <p id="estimate-empty">Выберите детали в прайсе слева или прикрепите фото</p>
+              <div id="estimate-selected" hidden>
+                <p id="estimate-count"></p>
+                <ul id="estimate-items" aria-label="Выбранные работы"></ul>
+              </div>
+            </div>
+            <div class="estimate-photos">
+              <label class="photo-drop" id="photo-drop" for="damage-photos">
+                <input class="estimate-sr-only" id="damage-photos" type="file" accept="image/*" multiple aria-describedby="photo-limits photo-error">
+                <svg class="estimate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 6 1.5-2h5L16 6h3a2 2 0 0 1 2 2v11H3V8a2 2 0 0 1 2-2z"/><circle cx="12" cy="12" r="3.5"/></svg>
+                <span><span class="photo-pick">Прикрепить фото повреждения</span><span class="photo-drag-hint"> или перетащить сюда</span><small id="photo-limits">До 3 фото · до 20 МБ каждое</small></span>
+              </label>
+              <ul class="photo-previews" id="photo-previews" aria-label="Выбранные фотографии" hidden></ul>
+              <p class="estimate-error" id="photo-error" role="status" hidden></p>
+            </div>
+            <div class="estimate-comment">
+              <label for="car-comment">Марка авто / комментарий <span>необязательно</span></label>
+              <input id="car-comment" type="text" maxlength="300" placeholder="Например, Kia Rio, 2018" autocomplete="off">
+            </div>
+            <div class="estimate-send">
+              <div class="estimate-actions">
+                <a class="estimate-action estimate-primary press" id="estimate-vk" href="https://vk.com/cubik_52" target="_blank" rel="noopener noreferrer">Оценить в ВК <svg class="estimate-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+                <a class="estimate-action estimate-secondary press" id="estimate-email" href="mailto:kubiku@inbox.ru">Написать на почту</a>
+              </div>
+              <p class="estimate-send-note">Фото прикрепите в диалоге или письме.</p>
+            </div>
+            <div class="estimate-copy-fallback" id="estimate-copy-fallback" hidden>
+              <label for="estimate-copy-text">Скопируйте расчет вручную</label>
+              <textarea id="estimate-copy-text" rows="5" readonly></textarea>
+            </div>
+          </section>
+        </div>
+        <noscript><p class="estimate-no-script">Для расчета включите JavaScript. Оценить ремонт также можно по телефону +7 (920) 041-25-52 или в ВК.</p></noscript>
+        <p class="estimate-toast" id="estimate-toast" role="status" hidden></p>
+      </section>
+      <section class="results" id="results" aria-labelledby="results-title">
+        <div class="results-heading">
+          <h2 id="results-title">Результат на кузове.</h2>
+          <p>Реальные работы цеха · ул. Красноармейская, 19А</p>
+        </div>
+        <div class="results-grid">
+          <article class="results-case results-glass" aria-labelledby="results-case-title">
+            <div class="results-comparison" style="--reveal: 50%">
+              <div class="results-scene">
+                <img class="results-before" src="assets/bmw-x4-before.webp" width="1254" height="1254" alt="До: чёрный BMW X4 G02 со снятым передним бампером" loading="lazy" draggable="false">
+              </div>
+              <div class="results-after-layer">
+                <div class="results-scene">
+                  <svg class="results-after" viewBox="0 0 1254 1254" role="img" aria-label="После: тот же BMW X4 с установленным чёрным глянцевым М-бампером">
+                    <image href="assets/bmw-x4-after.webp" width="1269" height="1240" transform="matrix(.991582607 -.004663667 .004663667 .991582607 -6.265792509 2.213615094)"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="results-photo-labels" aria-hidden="true">
+                <span class="results-label-before">ДО <span>· разборка и подгонка</span></span>
+                <span class="results-label-after">ПОСЛЕ <span>· окрас и сборка М-пакета</span></span>
+              </div>
+              <div class="results-divider" aria-hidden="true"><span class="results-handle"><span class="results-handle-core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 8-4 4 5 4m5-8 4 4-4 4"/></svg></span></span></div>
+              <input class="results-range" type="range" min="0" max="100" value="50" step="1" aria-label="Сравнение До и После: BMW X4" aria-valuetext="До 50%, после 50%">
+            </div>
+            <div class="results-case-copy">
+              <div class="results-case-heading">
+                <h3 id="results-case-title">BMW X4 G02 · Окрас и установка М-обвеса</h3>
+                <span class="results-duration">Срок: 3 дня · В заводской цвет</span>
+              </div>
+              <ul class="results-tags" aria-label="Особенности работы">
+                <li>Подбор чёрного глянца в цвет кузова</li>
+                <li>Заводские зазоры</li>
+                <li>Покраска в камере</li>
+              </ul>
+            </div>
+          </article>
+          <div class="results-details">
+            <article class="results-benefit results-glass">
+              <h3>Точное попадание в цвет</h3>
+              <p>Подбор эмали и сверка оттенка перед покраской — новые и окрашенные детали не отличаются от заводского кузова ни днём, ни под фонарями.</p>
+            </article>
+            <article class="results-benefit results-glass">
+              <h3>Покрасочная камера и заводская шагрень</h3>
+              <p>Красим в чистой камере без пыли и мусора. Настраиваем краскопульт так, чтобы шагрень лака совпадала с заводской.</p>
+            </article>
+            <article class="results-benefit results-glass">
+              <h3>Фотоотчёт каждого этапа в ВК</h3>
+              <p>Присылаем в личные сообщения фото разборки, примерки, грунта и готового лака — вы контролируете процесс со смартфона.</p>
+            </article>
+            <a class="results-vk results-glass press" href="https://vk.com/cubik_52" target="_blank" rel="noopener noreferrer">Смотреть другие работы в ВК <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+          </div>
+        </div>
+      </section>
+      <section class="workshop" id="contacts" aria-labelledby="workshop-title">
+        <div class="workshop-heading">
+          <h2 id="workshop-title">Цех в Дзержинске.</h2>
+          <p>Приём на осмотр и оценку · ул. Красноармейская, 19А</p>
+        </div>
+        <div class="workshop-grid">
+          <article class="workshop-card workshop-info" aria-labelledby="workshop-address">
+            <p class="workshop-hours">Приём автомобилей · Пн–Сб 9:00–19:00</p>
+            <h3 id="workshop-address">Дзержинск,<br>ул. Красноармейская, 19А</h3>
+            <p class="workshop-copy">Удобный заезд в бокс. Перед выездом напишите в ВК или позвоните, чтобы мастер встретил вас на месте.</p>
+            <address class="workshop-contacts">
+              <a class="workshop-contact press" href="tel:+79200412552"><span>Основной телефон</span><strong>+7 (920) 041-25-52</strong></a>
+              <a class="workshop-contact press" href="tel:+79290539946"><span>Второй номер цеха</span><strong>+7 (929) 053-99-46</strong></a>
+              <a class="workshop-contact press" href="tel:379200"><span>Городской (офис)</span><strong>37-9-2-00</strong></a>
+              <a class="workshop-contact press" href="mailto:kubiku@inbox.ru"><span>Почта для фото и смет</span><strong>kubiku@inbox.ru</strong></a>
+            </address>
+            <div class="workshop-actions">
+              <a class="workshop-button workshop-primary press" href="https://vk.com/cubik_52" target="_blank" rel="noopener noreferrer">Написать в ВК ↗</a>
+              <a class="workshop-button workshop-secondary press" href="tel:+79200412552">Позвонить в цех</a>
+            </div>
+          </article>
+          <div class="workshop-card workshop-map-card">
+            <div class="workshop-map">
+              <iframe title="Яндекс.Карта: цех Кубик, Дзержинск, Красноармейская, 19А" src="https://yandex.ru/map-widget/v1/?text=Нижегородская+область,+Дзержинск,+Красноармейская+улица,+19А&amp;z=16&amp;theme=dark" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+            <div class="workshop-actions workshop-route-actions">
+              <a class="workshop-button workshop-primary press" href="https://yandex.ru/maps/?text=Нижегородская+область,+Дзержинск,+улица+Красноармейская,+19А" target="_blank" rel="noopener noreferrer">Построить маршрут в Яндекс.Картах ↗</a>
+              <a class="workshop-button workshop-secondary press" href="https://2gis.ru/dzerzhinsk/search/Красноармейская%2019а" target="_blank" rel="noopener noreferrer">Открыть в 2ГИС ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>© Кубик · Кузовной ремонт, покраска и аквапринт в Дзержинске</p>
+      <nav aria-label="Навигация в подвале">
+        <a class="press" href="#services">Услуги</a>
+        <a class="press" href="#calculator">Калькулятор</a>
+        <a class="press" href="#results">Работы</a>
+        <a class="press" href="#contacts">Контакты</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>
