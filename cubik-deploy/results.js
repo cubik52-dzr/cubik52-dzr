@@ -2,32 +2,6 @@
   const comparison = document.querySelector('.results-comparison');
   if (!comparison) return;
   const range = comparison.querySelector('.results-range');
-  // Resample at display resolution to avoid soft transformed rasters on mobile.
-  const fallback = comparison.querySelector('.results-after');
-  const source = fallback.querySelector('image');
-  const registration = source.transform.baseVal.consolidate().matrix;
-  const photo = new Image();
-  photo.src = source.getAttribute('href');
-  photo.decode().then(() => {
-    const canvas = document.createElement('canvas');
-    canvas.className = 'results-after';
-    canvas.setAttribute('role', 'img');
-    canvas.setAttribute('aria-label', fallback.getAttribute('aria-label'));
-    const context = canvas.getContext('2d');
-    if (!context) return;
-    function draw() {
-      const pixels = Math.max(1, Math.round(comparison.clientWidth * Math.max(2, window.devicePixelRatio)));
-      canvas.width = canvas.height = pixels;
-      const scale = pixels / 1254;
-      context.imageSmoothingEnabled = true;
-      context.imageSmoothingQuality = 'high';
-      context.setTransform(scale * registration.a, scale * registration.b, scale * registration.c, scale * registration.d, scale * registration.e, scale * registration.f);
-      context.drawImage(photo, 0, 0);
-    }
-    fallback.replaceWith(canvas);
-    draw();
-    new ResizeObserver(draw).observe(comparison);
-  }).catch(() => { /* Keep the SVG fallback if image decoding is unavailable. */ });
   let activePointer;
   function render() {
     comparison.style.setProperty('--reveal', `${range.value}%`);

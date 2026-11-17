@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="results.css">
   <link rel="stylesheet" href="workshop.css">
   <script src="results.js" defer></script>
+  <script src="scroll-reveal.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">К содержимому</a>
@@ -30,7 +31,7 @@
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
         <div class="service-grid" id="services">
-          <h1 id="hero-title">Кузовной ремонт.<br>Покраска.</h1>
+          <h1 id="hero-title">Покраска авто.<br>Рихтовка и кузовной ремонт.</h1>
           <a class="service-card paint press" id="paint" href="https://vk.ru/im?sel=-102130451" target="_blank" rel="noopener noreferrer" aria-label="Покраска от 4 500 рублей — оценить по фото в ВК">
             <img src="assets/hero-paint.png" width="1254" height="1254" alt="" fetchpriority="high">
             <span class="card-caption"><span class="badge">Покраска</span><span class="card-detail">от 4 500 ₽</span></span>
@@ -39,40 +40,40 @@
             <img src="assets/hero-polish.png" width="1254" height="1254" alt="">
             <span class="card-caption"><span class="badge">Полировка</span><span class="card-detail">По осмотру</span></span>
           </a>
-          <a class="service-card bodywork press" id="bodywork" href="https://vk.ru/im?sel=-102130451" target="_blank" rel="noopener noreferrer" aria-label="Кузовной ремонт и стапель — оценить по фото в ВК">
+          <a class="service-card bodywork press" id="bodywork" href="https://vk.ru/im?sel=-102130451" target="_blank" rel="noopener noreferrer" aria-label="Рихтовка и кузовной ремонт — оценить по фото в ВК">
             <img src="assets/hero-bodywork.png" width="1448" height="1086" alt="">
-            <span class="card-caption"><span class="badge">Кузовной ремонт и стапель</span><span class="card-detail">По осмотру</span></span>
+            <span class="card-caption"><span class="badge">Рихтовка и кузовной ремонт</span><span class="card-detail">По осмотру</span></span>
           </a>
         </div>
         <div class="hero-bottom">
           <h2>Кузов. Цвет. <br>Детали.</h2>
-          <p>От царапины на бампере до восстановления геометрии кузова. Пришлите фото повреждений в ВК — предварительно оценим ремонт. Точную стоимость определим после осмотра.</p>
+          <p>Покраска, рихтовка и восстановление геометрии кузова. Пришлите фото повреждений в ВК — предварительно оценим ремонт. Точную стоимость определим после осмотра.</p>
           <a class="button press" href="https://vk.ru/im?sel=-102130451" target="_blank" rel="noopener noreferrer">Оценить по фото</a>
         </div>
       </section>
       <section class="contacts" id="calculator" aria-labelledby="contacts-title">
-        <div class="contacts-heading">
+        <div class="contacts-heading" data-reveal="0">
           <h2 id="contacts-title">Кубик. Дзержинск.</h2>
           <div class="contact-copy">
             <a class="address press" href="https://yandex.ru/maps/?rtext=~%D0%94%D0%B7%D0%B5%D1%80%D0%B6%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B0%D1%80%D0%BC%D0%B5%D0%B9%D1%81%D0%BA%D0%B0%D1%8F%2C%2019%D0%90&amp;rtt=auto" target="_blank" rel="noopener noreferrer">ул. Красноармейская, 19А <span aria-hidden="true">↗</span></a>
             <a class="press" href="tel:+79200412552">+7 (920) 041-25-52</a>
           </div>
         </div>
-        <div class="service-links estimate-tabs" role="tablist" aria-label="Выберите услугу">
+        <div class="service-links estimate-tabs" role="tablist" aria-label="Выберите услугу" data-reveal="0">
           <button class="press" type="button" role="tab" id="tab-paint" aria-controls="price-paint" aria-selected="true" data-service="paint">Покраска</button>
           <button class="press" type="button" role="tab" id="tab-polish" aria-controls="price-polish" aria-selected="false" tabindex="-1" data-service="polish">Полировка</button>
           <button class="press" type="button" role="tab" id="tab-bodywork" aria-controls="price-bodywork" aria-selected="false" tabindex="-1" data-service="bodywork">Кузовной ремонт</button>
           <button class="press" type="button" role="tab" id="tab-frame" aria-controls="price-frame" aria-selected="false" tabindex="-1" data-service="frame">Стапель</button>
         </div>
         <div class="estimate-grid">
-          <div class="estimate-card price-card">
+          <div class="estimate-card price-card" data-reveal="0">
             <div id="price-panels"></div>
             <div class="price-footnote">
               <span class="badge">Подбор эмали включен</span>
               <p>Цены предварительные. Точная стоимость — после осмотра.</p>
             </div>
           </div>
-          <section class="estimate-card quote-card" aria-labelledby="quote-title">
+          <section class="estimate-card quote-card" aria-labelledby="quote-title" data-reveal="70">
             <h3 id="quote-title">Оценка по фото</h3>
             <div class="estimate-summary" aria-live="polite" aria-atomic="true">
               <p class="estimate-total"><span>Ориентировочная стоимость</span><strong id="estimate-total">—</strong></p>
@@ -112,66 +113,64 @@
         <p class="estimate-toast" id="estimate-toast" role="status" hidden></p>
       </section>
       <section class="results" id="results" aria-labelledby="results-title">
-        <div class="results-heading">
+        <div class="results-heading" data-reveal="0">
           <h2 id="results-title">Результат на кузове.</h2>
           <p>Реальные работы цеха · ул. Красноармейская, 19А</p>
         </div>
         <div class="results-grid">
-          <article class="results-case results-glass" aria-labelledby="results-case-title">
+          <article class="results-case results-glass" aria-labelledby="results-case-title" data-reveal="0">
             <div class="results-comparison" style="--reveal: 50%">
               <div class="results-scene">
-                <img class="results-before" src="assets/bmw-x4-before.webp" width="1254" height="1254" alt="До: чёрный BMW X4 G02 со снятым передним бампером" loading="lazy" draggable="false">
+                <img class="results-before" src="assets/toyota-camry-before.webp" width="1254" height="1254" alt="До: коричневая Toyota Camry с вмятиной и коррозией заднего крыла и двери" loading="lazy" draggable="false">
               </div>
               <div class="results-after-layer">
                 <div class="results-scene">
-                  <svg class="results-after" viewBox="0 0 1254 1254" role="img" aria-label="После: тот же BMW X4 с установленным чёрным глянцевым М-бампером">
-                    <image href="assets/bmw-x4-after.webp" width="1269" height="1240" transform="matrix(.991582607 -.004663667 .004663667 .991582607 -6.265792509 2.213615094)"/>
-                  </svg>
+                  <img class="results-after" src="assets/toyota-camry-after.webp" width="1254" height="1254" alt="После: коричневая Toyota Camry после рихтовки и покраски заднего крыла и двери" loading="lazy" draggable="false">
                 </div>
               </div>
               <div class="results-photo-labels" aria-hidden="true">
-                <span class="results-label-before">ДО <span>· разборка и подгонка</span></span>
-                <span class="results-label-after">ПОСЛЕ <span>· окрас и сборка М-пакета</span></span>
+                <span class="results-label-before">ДО <span>· вмятина и коррозия</span></span>
+                <span class="results-label-after">ПОСЛЕ <span>· рихтовка и покраска</span></span>
               </div>
               <div class="results-divider" aria-hidden="true"><span class="results-handle"><span class="results-handle-core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 8-4 4 5 4m5-8 4 4-4 4"/></svg></span></span></div>
-              <input class="results-range" type="range" min="0" max="100" value="50" step="1" aria-label="Сравнение До и После: BMW X4" aria-valuetext="До 50%, после 50%">
+              <input class="results-range" type="range" min="0" max="100" value="50" step="1" aria-label="Сравнение До и После: Toyota Camry" aria-valuetext="До 50%, после 50%">
             </div>
             <div class="results-case-copy">
               <div class="results-case-heading">
-                <h3 id="results-case-title">BMW X4 G02 · Окрас и установка М-обвеса</h3>
+                <h3 id="results-case-title">Toyota Camry · Рихтовка и покраска</h3>
                 <span class="results-duration">Срок: 3 дня · В заводской цвет</span>
               </div>
               <ul class="results-tags" aria-label="Особенности работы">
-                <li>Подбор чёрного глянца в цвет кузова</li>
-                <li>Заводские зазоры</li>
+                <li>Рихтовка крыла и двери</li>
+                <li>Удаление коррозии</li>
                 <li>Покраска в камере</li>
               </ul>
             </div>
           </article>
           <div class="results-details">
-            <article class="results-benefit results-glass">
+            <article class="results-benefit results-glass" data-reveal="0">
               <h3>Точное попадание в цвет</h3>
               <p>Подбор эмали и сверка оттенка перед покраской — новые и окрашенные детали не отличаются от заводского кузова ни днём, ни под фонарями.</p>
             </article>
-            <article class="results-benefit results-glass">
+            <article class="results-benefit results-glass" data-reveal="60">
               <h3>Покрасочная камера и заводская шагрень</h3>
               <p>Красим в чистой камере без пыли и мусора. Настраиваем краскопульт так, чтобы шагрень лака совпадала с заводской.</p>
             </article>
-            <article class="results-benefit results-glass">
+            <article class="results-benefit results-glass" data-reveal="120">
               <h3>Фотоотчёт каждого этапа в ВК</h3>
               <p>Присылаем в личные сообщения фото разборки, примерки, грунта и готового лака — вы контролируете процесс со смартфона.</p>
             </article>
-            <a class="results-vk results-glass press" href="https://vk.com/cubik_52" target="_blank" rel="noopener noreferrer">Смотреть другие работы в ВК <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+            <a class="results-vk results-glass press" href="https://vk.com/cubik_52" target="_blank" rel="noopener noreferrer" data-reveal="180">Смотреть другие работы в ВК <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
           </div>
         </div>
       </section>
       <section class="workshop" id="contacts" aria-labelledby="workshop-title">
-        <div class="workshop-heading">
+        <div class="workshop-heading" data-reveal="0">
           <h2 id="workshop-title">Цех в Дзержинске.</h2>
           <p>Приём на осмотр и оценку · ул. Красноармейская, 19А</p>
         </div>
         <div class="workshop-grid">
-          <article class="workshop-card workshop-info" aria-labelledby="workshop-address">
+          <article class="workshop-card workshop-info" aria-labelledby="workshop-address" data-reveal="0">
             <p class="workshop-hours">Приём автомобилей · Пн–Сб 9:00–19:00</p>
             <h3 id="workshop-address">Дзержинск,<br>ул. Красноармейская, 19А</h3>
             <p class="workshop-copy">Удобный заезд в бокс. Перед выездом напишите в ВК или позвоните, чтобы мастер встретил вас на месте.</p>
@@ -186,7 +185,7 @@
               <a class="workshop-button workshop-secondary press" href="tel:+79200412552">Позвонить в цех</a>
             </div>
           </article>
-          <div class="workshop-card workshop-map-card">
+          <div class="workshop-card workshop-map-card" data-reveal="70">
             <div class="workshop-map">
               <iframe title="Яндекс.Карта: цех Кубик, Дзержинск, Красноармейская, 19А" src="https://yandex.ru/map-widget/v1/?text=Нижегородская+область,+Дзержинск,+Красноармейская+улица,+19А&amp;z=16&amp;theme=dark" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
@@ -198,7 +197,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" data-reveal="0">
       <p>© Кубик · Кузовной ремонт, покраска и аквапринт в Дзержинске</p>
       <nav aria-label="Навигация в подвале">
         <a class="press" href="#services">Услуги</a>

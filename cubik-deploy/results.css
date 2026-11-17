@@ -21,9 +21,8 @@
 .results-comparison { position: relative; isolation: isolate; overflow: hidden; aspect-ratio: 1.2; border-radius: var(--results-photo-radius); background: var(--results-canvas); cursor: ew-resize; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
 .results-scene { position: absolute; width: 100%; aspect-ratio: 1; top: 50%; left: 0; margin-top: -50%; pointer-events: none; }
 .results-before { display: block; width: 100%; height: auto; }
-/* Similarity registration from unchanged hood/windscreen features in the originals.
-   Both layers share a fixed canvas; dragging only changes the clip, never image width. */
-.results-after { display: block; width: 100%; height: auto; overflow: visible; }
+/* Both Toyota photos share a fixed square; the slider changes only the clip. */
+.results-after { display: block; width: 100%; height: auto; }
 .results-after-layer { position: absolute; inset: 0; clip-path: inset(0 0 0 var(--reveal)); pointer-events: none; }
 .results-photo-labels { position: absolute; inset: 16px 16px auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; pointer-events: none; }
 .results-photo-labels > span { position: relative; padding: 8px 12px 8px 28px; border: 1px solid var(--results-edge); border-radius: 12px; background: rgba(5,5,5,.78); box-shadow: var(--glass-top-light); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: var(--text); font-size: 12px; font-weight: 500; line-height: 1.45; }
