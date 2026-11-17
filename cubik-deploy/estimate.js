@@ -1,4 +1,4 @@
-const DEMO_MODE = true;
+const DEMO_MODE = false;
 
 (() => {
   if (DEMO_MODE) {
