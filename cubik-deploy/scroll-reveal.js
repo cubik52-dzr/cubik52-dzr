@@ -26,6 +26,7 @@
     observer.observe(element);
   }
   document.addEventListener('focusin', event => {
+    if (!event.target.matches(':focus-visible')) return;
     const element = event.target.closest('[data-reveal]');
     if (element) reveal(element, false);
   });

@@ -26,3 +26,10 @@ document.addEventListener('keydown', event => {
 });
 for (const type of ['pointerup', 'pointercancel', 'keyup', 'focusout']) document.addEventListener(type, releasePress);
 window.addEventListener('blur', releasePress);
+
+for (const link of document.querySelectorAll('[data-max-contact]')) {
+  const phone = link.closest('.workshop-contact').querySelector('.workshop-number').getAttribute('href').slice(4);
+  link.addEventListener('click', () => {
+    navigator.clipboard?.writeText(phone).catch(() => {});
+  });
+}

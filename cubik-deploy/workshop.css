@@ -17,9 +17,11 @@
 .workshop-info h3 { margin: 0; font-size: var(--workshop-title); font-weight: 500; line-height: 1.12; letter-spacing: -.035em; }
 .workshop-copy { max-width: 48ch; color: var(--muted); font-size: var(--workshop-ui); line-height: 1.5; }
 .workshop-contacts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; font-style: normal; }
-.workshop-contact { display: flex; flex-direction: column; justify-content: center; gap: 8px; min-width: 0; min-height: 76px; padding: 16px; border: 1px solid var(--glass-edge); border-radius: 12px; background: rgba(255,255,255,.03); box-shadow: var(--glass-top-light); }
-.workshop-contact span { color: var(--muted); font-size: var(--workshop-small); }
-.workshop-contact strong { font-size: var(--workshop-ui); font-weight: 500; overflow-wrap: anywhere; }
+.workshop-contact { display: grid; align-content: start; gap: 8px; padding: 8px 16px 16px; border: 1px solid var(--glass-edge); border-radius: 12px; background: rgba(255,255,255,.03); box-shadow: var(--glass-top-light); }
+.workshop-number { display: inline-flex; align-items: center; justify-self: start; min-height: 44px; font-size: var(--workshop-ui); font-weight: 500; }
+.workshop-messengers { display: flex; flex-wrap: wrap; gap: 8px; }
+.workshop-messengers a { display: inline-flex; align-items: center; justify-content: center; flex: 1; min-height: 44px; padding: 4px 10px; border: 1px solid var(--glass-edge); border-radius: 100px; font-size: var(--workshop-small); }
+#max-hint { grid-column: 1 / -1; color: var(--muted); font-size: var(--workshop-small); }
 .workshop-actions { display: flex; gap: 12px; margin-top: auto; }
 .workshop-button { display: flex; flex: 1; align-items: center; justify-content: center; min-height: 52px; padding: 12px 16px; border: 1px solid var(--glass-edge); border-radius: 12px; font-size: var(--workshop-ui); font-weight: 500; line-height: 1.45; text-align: center; }
 .workshop-primary { background: var(--text); color: var(--canvas); }
@@ -35,7 +37,8 @@
 .footer a { display: inline-flex; align-items: center; min-height: 44px; }
 @media (hover: hover) {
   .workshop-primary:hover { background-color: #dededb; }
-  .workshop-secondary:hover, .workshop-contact:hover { background-color: rgba(255,255,255,.07); }
+  .workshop-secondary:hover, .workshop-messengers a:hover { background-color: rgba(255,255,255,.07); }
+  .workshop-number:hover { text-decoration: underline; text-underline-offset: 3px; }
   .footer a:hover { color: var(--text); }
 }
 @media (max-width: 1100px) { .workshop-contacts { grid-template-columns: minmax(0, 1fr); } .workshop-route-actions { flex-direction: column; } }

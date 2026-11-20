@@ -48,6 +48,18 @@
 .estimate-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); margin-top: var(--estimate-space); }
 .estimate-card { min-width: 0; padding: var(--estimate-padding); border-radius: var(--radius); background: var(--estimate-surface); box-shadow: var(--estimate-top-light), var(--estimate-depth); border: 1px solid var(--glass-edge); }
 .estimate-card h3 { margin: 0; font-size: var(--estimate-title); font-weight: 500; line-height: 1.12; letter-spacing: -.035em; }
+.coating-services { display: grid; grid-template-columns: 2fr 1fr; gap: var(--estimate-space); margin-top: var(--estimate-space); }
+.coating-services > h3 { align-self: start; padding-inline-start: var(--estimate-space); border-inline-start: 1px solid var(--estimate-edge); }
+.enamel-rates { display: grid; gap: 12px; margin: 16px 0 0; font-size: var(--estimate-ui); }
+.enamel-rates div { display: flex; justify-content: space-between; gap: 4px 16px; }
+.enamel-rates dd { margin: 0; flex-shrink: 0; font-weight: 500; }
+@media (max-width: 760px) {
+  .coating-services { grid-template-columns: 1fr; }
+  .coating-services > h3 { padding: 16px 0 0; border-inline-start: 0; border-top: 1px solid var(--estimate-edge); }
+}
+@media (max-width: 460px) {
+  .enamel-rates div { flex-direction: column; }
+}
 .price-card { display: flex; flex-direction: column; }
 .price-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: var(--estimate-space); }
 .price-heading > span { flex-shrink: 0; color: var(--muted); font-size: var(--estimate-small); }

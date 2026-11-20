@@ -286,7 +286,7 @@ const DEMO_MODE = false;
     dialog.setAttribute('aria-describedby', 'demo-explanation');
     dialog.innerHTML = `<h2 id="demo-title">Предпросмотр заявки клиента (Демо-режим)</h2>
       <pre class="demo-request-text"></pre><div class="demo-photos" hidden></div>
-      <p id="demo-explanation">В демонстрационной версии прямые переходы в диалог ВК и звонки отключены. После подключения сайта под ключ текст расчёта автоматически копируется и переводит клиента напрямую в ваш диалог vk.me/cubik_52 или почту kubiku@inbox.ru.</p>
+      <p id="demo-explanation">В демонстрационной версии звонки и переходы к переписке открывают этот предпросмотр. В рабочей версии можно позвонить, написать в мессенджере или отправить расчёт по почте.</p>
       <form method="dialog"><button class="demo-close press" autofocus>Понятно, вернуться к сайту</button></form>`;
     document.body.append(dialog);
     function openPreview() {
@@ -305,7 +305,7 @@ const DEMO_MODE = false;
     const contactLinks = [...document.querySelectorAll('a[href]')].filter(link => {
       const url = new URL(link.href);
       return ['tel:', 'mailto:'].includes(url.protocol) ||
-        /(^|\.)(vk\.com|vk\.ru|vk\.me|t\.me|telegram\.me|wa\.me|whatsapp\.com|ok\.ru|instagram\.com|facebook\.com)$/.test(url.hostname) || link === vk || link === email;
+        /(^|\.)(vk\.com|vk\.ru|vk\.me|t\.me|telegram\.me|max\.ru|wa\.me|whatsapp\.com|ok\.ru|instagram\.com|facebook\.com)$/.test(url.hostname) || link === vk || link === email;
     });
     for (const link of contactLinks) {
       link.href = '#demo-request';
